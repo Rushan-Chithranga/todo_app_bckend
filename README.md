@@ -49,6 +49,21 @@ npm install
 composer run dev
 ```
 
+## setup env
+
+```bash
+Copy .env.example file
+Rename as .env
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=todo_app_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+add db connection
+```
 
 Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
