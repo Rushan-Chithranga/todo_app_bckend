@@ -76,6 +76,19 @@ class TodosController extends Controller
         return response()->json($todo);
     }
 
+    public function updateStatus(Request $request, $id)
+    {
+        $todo = auth()->user()->todos()->findOrFail($id);
+
+        $request->validate([
+            'is_completed' => 'required|boolean',
+        ]);
+
+        $todo->update($request->only('is_completed'));
+
+        return response()->json($todo);
+    }
+
     public function destroy($id)
     {
         $todo = auth()->user()->todos()->findOrFail($id);
